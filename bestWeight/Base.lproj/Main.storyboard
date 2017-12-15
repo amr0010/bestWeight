@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,85 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bestWeight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8J-rK-VFh">
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnt-N2-PDM">
+                                <rect key="frame" x="16" y="69" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-pA-h4P">
+                                <rect key="frame" x="16" y="123" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahb-TV-Ibf">
+                                <rect key="frame" x="16" y="177" width="343" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Ka7-Cb-brn"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa0-KS-24L">
+                                <rect key="frame" x="190" y="409" width="169" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="mPS-NH-alX"/>
+                                </constraints>
+                                <state key="normal" title="Get Best Weight"/>
+                                <connections>
+                                    <action selector="buGetBestWeight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8th-eC-c8M"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your best weight is " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otz-fr-pDi">
+                                <rect key="frame" x="16" y="498" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rnt-N2-PDM" firstAttribute="leading" secondItem="a8J-rK-VFh" secondAttribute="leading" id="0QZ-fc-efe"/>
+                            <constraint firstItem="ahb-TV-Ibf" firstAttribute="leading" secondItem="ddf-pA-h4P" secondAttribute="leading" id="0ti-ga-ZIY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a8J-rK-VFh" secondAttribute="trailing" constant="16" id="ISX-QW-UoA"/>
+                            <constraint firstItem="rnt-N2-PDM" firstAttribute="top" secondItem="a8J-rK-VFh" secondAttribute="bottom" constant="19" id="Nhy-8C-W2w"/>
+                            <constraint firstItem="rnt-N2-PDM" firstAttribute="trailing" secondItem="a8J-rK-VFh" secondAttribute="trailing" id="Og7-aw-dYr"/>
+                            <constraint firstItem="pa0-KS-24L" firstAttribute="top" secondItem="ahb-TV-Ibf" secondAttribute="bottom" constant="70" id="P5X-RJ-UkF"/>
+                            <constraint firstItem="ahb-TV-Ibf" firstAttribute="top" secondItem="ddf-pA-h4P" secondAttribute="bottom" constant="33" id="QMf-b7-MS6"/>
+                            <constraint firstItem="Otz-fr-pDi" firstAttribute="trailing" secondItem="ahb-TV-Ibf" secondAttribute="trailing" id="Udn-ZR-SD3"/>
+                            <constraint firstItem="ddf-pA-h4P" firstAttribute="top" secondItem="rnt-N2-PDM" secondAttribute="bottom" constant="24" id="VLg-BC-qXv"/>
+                            <constraint firstItem="Otz-fr-pDi" firstAttribute="top" secondItem="pa0-KS-24L" secondAttribute="bottom" constant="59" id="YTf-52-E1Z"/>
+                            <constraint firstItem="a8J-rK-VFh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aSH-QZ-N4c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pa0-KS-24L" secondAttribute="trailing" constant="16" id="cw0-fn-EUz"/>
+                            <constraint firstItem="ddf-pA-h4P" firstAttribute="leading" secondItem="rnt-N2-PDM" secondAttribute="leading" id="dO6-VO-XX3"/>
+                            <constraint firstItem="a8J-rK-VFh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="drx-Vq-sWY"/>
+                            <constraint firstItem="Otz-fr-pDi" firstAttribute="leading" secondItem="ahb-TV-Ibf" secondAttribute="leading" id="qh4-qa-z4a"/>
+                            <constraint firstItem="ahb-TV-Ibf" firstAttribute="trailing" secondItem="ddf-pA-h4P" secondAttribute="trailing" id="uXb-0t-KJJ"/>
+                            <constraint firstItem="ddf-pA-h4P" firstAttribute="trailing" secondItem="rnt-N2-PDM" secondAttribute="trailing" id="xv8-ih-hjU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="laDisplayBestWeight" destination="Otz-fr-pDi" id="FAv-s3-8Re"/>
+                        <outlet property="laGender" destination="ddf-pA-h4P" id="XNL-3l-70s"/>
+                        <outlet property="pvGender" destination="ahb-TV-Ibf" id="p1K-Su-SgQ"/>
+                        <outlet property="txtAge" destination="a8J-rK-VFh" id="buf-8p-lL2"/>
+                        <outlet property="txtHeight" destination="rnt-N2-PDM" id="stt-Xn-VmW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-90.400000000000006" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
